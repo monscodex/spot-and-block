@@ -1,0 +1,66 @@
+/*This file contains the popup's specific styling.*/
+
+html {
+  width: 365px;
+  font-size: 85%;
+  line-height: 60%;
+}
+
+section {
+  min-width: 300px;
+  margin: 0px 0px 5px 0px;
+  padding-bottom: 5px;
+  padding-top: 3px;
+}
+
+.top-section {
+  margin-top: 0px;
+}
+
+#popup-error-message {
+  font-weight: bolder;
+  padding: 5%;
+  text-align: start;
+  width: 300px;
+  font-size: 200%;
+}
+
+#site-match-category {
+  font-weight: bold;
+  padding: 5%;
+  text-align: center;
+}
+
+body {
+  width: auto;
+}
+
+p {
+  font-size: 160%;
+}
+
+.deactivated-button,
+.activated-button,
+#option-page-open-button {
+  font-size: auto;
+
+  margin-top: 7px;
+  margin-bottom: 0px;
+}
+
+#option-page-open-button {
+    background-color: rgb(135, 157, 228);
+    font-size: 200%;
+    padding-right: 7px;
+}
+
+button {
+  margin: 0px;
+}
+
+#activation-deactivation-button,
+#option-page-open-button {
+  width: 100%;
+
+  line-height: 2;
+}

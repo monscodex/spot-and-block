@@ -1,0 +1,106 @@
+/*This file contains some shared styling between all of the pages.*/
+
+:root {
+  --background: #181a1b;
+  --section-background: #242427;
+
+  --headers: #4285f4;
+  --header-left-border: #ffa500;
+  --border: #1f35ff;
+
+  --green-button: #1e7e34;
+  --green-button-hover: #218838;
+  --deactivated-button: #333333;
+  --deactivated-button-color: #7a7a7a;
+}
+
+html {
+  font-family: sans-serif;
+  background-color: var(--background);
+  color: #a8a095;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--headers);
+  font-size: 170%;
+  line-height: 1.5;
+}
+
+h1 {
+  padding-left: 10px;
+}
+
+.section-title {
+  border-left: 8px solid var(--header-left-border);
+  padding-left: 10px;
+  margin-top: 20px;
+}
+
+.title-div,
+.intercepting-page-div,
+#site-match-category,
+#popup-error-message {
+  /* Defining the upper border */
+  border-style: solid;
+  border-width: thick;
+  padding-right: 2%;
+  border-color: var(--border);
+}
+
+p {
+  text-align: right;
+  color: orange;
+}
+
+.option,
+p {
+  font-size: medium;
+}
+
+.title-div,
+section {
+  margin: 30px auto 5px auto;
+  padding: 5px 25px 20px 25px;
+  border-radius: 30px;
+  width: 60%;
+  min-width: 600px;
+}
+
+section,
+.tab-content-and-container {
+  background-color: var(--section-background);
+}
+
+.green-button,
+.activated-button,
+.deactivated-button {
+  margin: 5px 5px 5px 5px;
+  margin-left: 45;
+  margin-right: 45px;
+  font-size: large;
+  color: #ebebeb;
+  text-align: center;
+  vertical-align: middle;
+  border: 0px;
+  line-height: 2;
+  border-radius: 7px;
+}
+
+.green-button,
+.activated-button {
+  background-color: var(--green-button);
+}
+
+.deactivated-button {
+  background-color: var(--deactivated-button);
+  color: var(--deactivated-button-color);
+}
+
+.green-button:hover,
+.activated-button:hover {
+  color: #fff;
+  background-color: var(--green-button-hover);
+  border-color: var(--green-button);
+}

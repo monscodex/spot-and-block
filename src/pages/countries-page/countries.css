@@ -1,0 +1,16 @@
+/*This file contains the countries' webpage specific styling.*/
+
+#countries {
+  line-height: 160%;
+  padding-left: 5%;
+  text-align: left;
+}
+
+#title {
+  font-size: 300%;
+  text-align: center;
+}
+
+.title-div {
+  margin-bottom: 80px;
+}

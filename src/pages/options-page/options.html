@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <!--This is the options' page.-->
+  <!--It is divided into multiple sections.-->
+
+  <head>
+    <title>Spot & Block Options</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./options.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./options.js" type="module"></script>
+  </head>
+
+  <body>
+    <div class="title-div">
+      <h1 class="main-title">Spot & Block Options</h1>
+      <p class="title-description">
+        General settings for standard and advanced users.
+      </p>
+    </div>
+
+    <section class="upper-buttons-row">
+      <button type="button" class="green-button" id="save-button">
+        Save settings
+      </button>
+      <button type="button" class="green-button" id="reset-button">
+        Reset settings
+      </button>
+    </section>
+
+    <div id="options-container">
+      <section class="options-section" id="apis-options-section">
+        <h2 class="section-title">Basic Options</h2>
+        <p>
+            API Options are mandatory for the extension to work.
+        </p>
+      </section>
+
+      <section class="options-section" id="basic-options-section">
+        <h2 class="section-title">Basic Options</h2>
+        <p>
+          These are simple options that everyone should consider! Read the
+          description carefully.
+        </p>
+      </section>
+
+      <section class="options-section" id="spot-section">
+        <h2 class="section-title">Advanced Spot Options</h2>
+        <p>
+          Configure the website spotting and classification according to its
+          risk (critical, medium or low-risk).
+        </p>
+      </section>
+      <section class="options-section" id="block-section">
+        <h2 class="section-title">Advanced Block Options</h2>
+        <p>
+          Configure what elements of the site are blocked after the site has
+          been flagged according to its risk.
+        </p>
+      </section>
+
+      <section class="options-section" id="timing-section">
+        <h2 class="section-title">Advanced Timing Options</h2>
+        <p>These are the options related to the timing of certain actions.</p>
+      </section>
+    </div>
+  </body>
+</html>

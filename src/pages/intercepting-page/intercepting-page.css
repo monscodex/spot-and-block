@@ -1,0 +1,21 @@
+/*This file contains the intercepting page's specific styling.*/
+
+.intercepting-page-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  margin: 10%;
+  margin-bottom: 5%;
+}
+
+#tldr {
+  font-size: xx-large;
+  margin: 15%;
+}
+
+#full-explanation,
+#tldr {
+  text-align: center;
+  line-height: 1.6;
+}

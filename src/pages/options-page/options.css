@@ -1,0 +1,154 @@
+/*This file contains the options' page specific styling.*/
+
+:root {
+  --description-background: #34769d;
+  --description: #000;
+
+  --input-background: #3c3c41;
+  --input-border: #0062ff;
+
+  --tab-button: #2c2c30;
+  --tab-button-hover: #19182b;
+  --tab-button-active: #38383d;
+}
+
+.option {
+  line-height: 1.5;
+  text-align: center;
+}
+
+.options-table {
+  border-spacing: 15px;
+}
+
+thead th {
+  padding-top: 30px;
+  font-size: x-large;
+}
+
+.option-description {
+  border-radius: 7px;
+  padding: 30px;
+  white-space: pre-line;
+  background-color: var(--description-background);
+  color: var(--description);
+  font-size: 16px;
+}
+.upper-buttons-row {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+textarea,
+input {
+  /*font*/
+  font-weight: 500;
+  color: #c9c9d9;
+
+  /*text*/
+  text-align: center;
+  line-height: 170%;
+
+  /*border*/
+  border: 8px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: var(--input-border);
+
+  width: 100px;
+  min-width: 50px;
+  background-color: var(--input-background);
+}
+
+input {
+  padding-left: 12px;
+}
+
+textarea {
+  min-height: 50px;
+  white-space: pre;
+  overflow-wrap: normal;
+  overflow-x: scroll;
+
+  padding: 20px;
+  padding-bottom: 8px;
+}
+
+p {
+  padding-bottom: 20px;
+}
+
+.text-area-div {
+  display: flex;
+}
+
+.tab-content-and-container,
+.tabs-row,
+.tab-content {
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.tab-content-and-container {
+  width: 100%;
+  display: grid;
+}
+
+.tabs-row {
+  /*display*/
+  width: 100%;
+  display: grid;
+  grid-auto-flow: column;
+
+  border: 1px solid #ccc;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.tabs-row,
+.tab-content {
+  float: center;
+  flex-basis: auto;
+}
+
+.display-tab-button {
+  padding: 10px 7px;
+  color: #c9c9d9;
+  font-size: large;
+  background-color: var(--tab-button);
+  /* #2e2e32; */
+  border: none;
+  outline: none;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.2s;
+  font-weight: 400;
+}
+
+.display-tab-button:hover {
+  background-color: var(--tab-button-hover);
+}
+
+.display-tab-button.active {
+  background-color: var(--tab-button-active);
+}
+
+.tab-content {
+  /*padding: 0px 12px;*/
+  /*Display is none because the user is going to have to press a button in order to display the tab's content*/
+  display: none;
+}
+
+.title-div {
+  text-align: center;
+}
+
+.main-title {
+  font-size: xxx-large;
+}
+
+.title-description {
+  font-size: medium;
+}

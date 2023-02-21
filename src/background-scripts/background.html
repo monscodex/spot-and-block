@@ -1,0 +1,32 @@
+<!--This file calls the background scripts. I made it this way instead of
+  declaring it in the manifest.json to be able to use the import/export
+  functionalities in my code.-->
+
+<script type="module" src="./onInstalled.js"></script>
+
+<!--Site check utilities-->
+<script type="module" src="./registerAllDomainsToTheirIP.js"></script>
+<script type="module" src="./modules/site-check/site-check.js"></script>
+<script
+  type="module"
+  src="./modules/site-check/popup-disabling-extension-for-site.js"
+></script>
+
+<!--Blocking utilities-->
+<script type="module" src="./modules/block-elements-on-page/block.js"></script>
+<script
+  type="module"
+  src="./modules/block-elements-on-page/blockingActionsWhenLeavingPage.js"
+></script>
+<script type="module" src="./reloadTab.js"></script>
+<script
+  type="module"
+  src="./modules/block-elements-on-page/block-js-of-page.js"
+></script>
+<script
+  type="module"
+  src="./modules/block-elements-on-page/block-third-party-of-page.js"
+></script>
+
+<!--Miscellaneous-->
+<script type="module" src="./modules/auto-cleaning/autoCleaning.js"></script>

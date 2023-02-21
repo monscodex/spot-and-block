@@ -1,0 +1,34 @@
+{
+  "name": "Spot & Block",
+  "version": "1.0",
+  "manifest_version": 2,
+  "description": "Extension that analyses the connections made by the browser, to spot the bad ones and block them.",
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["foreground-scripts/content.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "Spot & Block",
+    "default_popup": "./pages/extension-popup/popup.html"
+  },
+
+  "background": {
+    "page": "background-scripts/background.html"
+  },
+
+  "permissions": [
+    "*://*/*",
+    "tabs",
+    "storage",
+    "unlimitedStorage",
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "browsingData"
+  ],
+
+  "options_page": "pages/options-page/options.html",
+  "icons": { "256": "./icons/logo.png" }
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <!--This file is the popup's webpage.-->
+  <!--This webpage is divided into two sections: the one displaying the site's
+    matching category and the one displaying buttons to manually control what
+    features are being blocked.-->
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>Extension Popup</title>
+    <link rel="stylesheet" href="../main.css" />
+    <link rel="stylesheet" href="./popup.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./popup.js" type="module"></script>
+  </head>
+  <body>
+    <section>
+    <button type="button" id="option-page-open-button">Options Page</button>
+    </section>
+    <section class="top-section" id="activation-deactivation-div">
+      <h2 class="section-title">Activate/Deactivate Extension For Site</h2>
+      <!--Here is going to be the activation/deactivation button for the current site-->
+      <button type="button" id="activation-deactivation-button"></button>
+    </section>
+    <section id="match-category-div">
+      <h2 class="section-title">In What Category The Site Matched</h2>
+      <p id="site-match-category">
+        <!--# Here is going to be displayed the category in which the site matched-->
+      </p>
+    </section>
+    <section id="blocking-buttons">
+      <h2 class="section-title">Blocking Options</h2>
+      <p>Interactively block.</p>
+      <div id="blocking-buttons-div"></div>
+    </section>
+  </body>
+</html>
