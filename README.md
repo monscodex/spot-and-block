@@ -21,13 +21,15 @@ This extension operates by ranking visited sites in terms of harmfulness (Spot) 
 - Simple to use: Made for a user with no technical background.
 - Relevant and innovative methods to determine the site's harmfulness.
 - Various configurable options to determine how dangerous a site is and what the extension should block from it.
-- Many site-blocking features (e.g Blocking cookies, deleting storage when leaving the page, blocking the javascript, blocking the site all together, etc).
+- Many site-blocking features (e.g. Blocking cookies, deleting storage when leaving the page, blocking the javascript, blocking the site all together, etc).
 
 - Optimized to run the fastest way possible.
 
 ## Installation
 
 The extension installation is done from the project's source code (in the src folder).
+
+Don't forget to add your own [virustotal](https://www.virustotal.com/gui/) and [shodan](https://www.shodan.io/) API keys after installing the extension on your browser
 
 ### To install in the Chrome browser:
 
@@ -43,19 +45,8 @@ The extension is fully installed!
 
 ![](./README-images/Installation/Chrome/InstallingOnChrome3.png)
 
-### To install in the Brave browser:
-
-Open your Brave Browser and go to the Extensions page. To do this, follow the click sequence (1), (2) on the image below:
-
-![](./README-images/Installation/Brave/InstallingOnBrave1.png)
-
-As shown on the image below, toggle the Developer mode on (1), then click on the 'Load unpacked' button (2). On the 'Select the extension directory' window that just opened, select the src folder of this project (3) and click Select (4).
-
-![](./README-images/Installation/Brave/InstallingOnBrave2.png)
-
-The extension is fully installed!
-
-![](./README-images/Installation/Brave/InstallingOnBrave3.png)
+## IMPORTANT: Getting API keys
+This extension uses some free services which include ([shodan](https://www.shodan.io/) and [virustotal](https://www.virustotal.com/gui/)). These services are not completely free to access but require you to create an account in order to use them more extensively. This extension requires the user to insert their own [ shodan API key ]( https://developer.shodan.io/api/requirements ) as well as their [virustotal API key](https://www.virustotal.com/gui/my-apikey) in the **options page** after creating a [shodan](https://www.shodan.io/) and a [virustotal](https://www.virustotal.com/gui/) account respectively.
 
 ## User Interface
 
@@ -117,19 +108,17 @@ This extension relies on the service of four different APIs: [shodanAPI](https:/
 The shodanAPI is essential for the execution of the extension. Whereas, the other three are complementing spotting services. 
 
 ##### [shodanAPI](https://www.shodan.io/): 
- I chose to make the shodanAPI (from Shodan.io) the basis on this extension's functions because it provides crucial data for the risk classification of the websites:  _the server IP's CVEs, open ports, tags and location_. Another advantage is that it provides a free service for the development of tech products through an API key that they offer to the user. Thus, the proof-of-work code as you see it, works solely with the API key included in the shodan.js file (pinpointed with a comment in the code) which pertains to the free Shodan service  that includes 10,000 requests/month (figure obtained at the date of the publication of this file). For this reason, the extension with the included API key is an answer to the academic exercise of the CS50 final project. 
- Nonetheless, if the development of the extension were to be considered to aim at a use of a bigger public, each user would need their own API key, by subscribing directly to the free or the paid membership of the shodanAPI services for their personal use (refer to www.shodan.io). 
+ I chose to make the shodanAPI (from Shodan.io) the basis on this extension's functions because it provides crucial data for the risk classification of the websites:  _the server IP's CVEs, open ports, tags and location_. Another advantage is that it provides a free service for the development of tech products through an API key that they offer to the user. The free plan includes 10,000 requests/month (figure obtained at the date of the publication of this file). 
  
 
 ##### [virusTotalAPI](https://www.virustotal.com/gui/) 
 This API service fetches the information that regards the _antivirus report_ of the visited website. 
-This API service also depends on the use of an API key that is obtained through the free services of virusTotal. The virusTotal API key is included in the virusTotal.js file (pinpointed with a comment in the code). This API key gives us access to 500 requests per day at a maximum rate of 4 requests per minute (figures obtained at the date of the publication of this file). The information that is provided by virusTotal is used for some of the spotting criteria, it is important but not crucial. Since this service imposes a limited rate and is not essential, this program considers that in the event that the information needed from virusTotal is not obtained at the moment of the request, the classification could be completed with the other criteria by bypassing the antivirus information.
-If the development of the extension were to be considered to aim at a use of a bigger public, each user would need their own API key, by subscribing directly to the free or the paid membership of the virusTotalAPI services for their personal use (refer to www.virustotal.com/gui/). 
+This API service also depends on the use of an API key that is obtained through the free services of virusTotal The free plan comes with 500 requests per day at a maximum rate of 4 requests per minute (figures obtained at the date of the publication of this file). The information that is provided by virusTotal is used for some of the spotting criteria, it is important but not crucial. Since this service imposes a limited rate and is not essential, this program considers that in the event that the information needed from virusTotal is not obtained at the moment of the request, the classification could be completed with the other criteria by bypassing the antivirus information.
 
  
 ##### [BigDataCloudAPI](https://www.bigdatacloud.com/) 
 This API is used to perform the _reverse geolocation of the IP's location._ This is a free service provided by BigDataCloud API that does not depend on a personal API key but that has a limited use of 10,000 requests per month (figure obtained at the date of the publication of this file). The reverse geolocation used to locate the server geographically is used as a spotting criteria but it is not crucial for this program. 
-Since this service imposes a limited rate and is not essential, this program considers that when the request quota to BigDataCloud is exceeded, the classification could be completed with the other criteria by bypassing the geolocation. If you want to upgrade BigDataCloudAPI service with a paid subscription refer to www.bigdatacloud.com . 
+Since this service imposes a limited rate and is not essential, this program considers that when the request quota to BigDataCloud is exceeded, the classification could be completed with the other criteria by bypassing the geolocation. If you want to upgrade BigDataCloudAPI service with a paid subscription refer to www.bigdatacloud.com. 
 
  
 ##### [CirclCveAPI](https://cve.circl.lu/) 
@@ -138,9 +127,6 @@ This API is used to obtain the _CVSS of all of the server's CVEs._ This is a fre
 #### Regarding the use of this extension
 
 With the current design of this program and its dependency on the API services mentioned above, I propose three uses according to the visit rate:
-
-- **For the validation of this program (proof-of-work):** 
-Currently, API keys have been included in the code to present the proof-of-work of this project. To run this academic exercise with the included keys, please use it in a moderate rate in order to avoid reaching the maximum requests quota of the shodanAPI key and the virusTotal API key (current request limits explained thoroughly above).
 
 - **Limited personal program use:** 
 If you intend to use this program in your personal browsing, you can use it with the free API services as long as you restrain the number of analyzed websites. To do that, create a [shodan](https://www.shodan.io/) and a [virustotal](https://www.virustotal.com/gui/) account. Then proceed to insert your [ shodan API key ]( https://developer.shodan.io/api/requirements ) as well as your [virustotal API key](https://www.virustotal.com/gui/my-apikey) in the extension's option page.
