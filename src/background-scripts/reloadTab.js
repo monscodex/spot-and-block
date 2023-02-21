@@ -6,9 +6,9 @@
 "use strict";
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
-    if (request.message !== "reloadTab") {
-        return;
-    }
+  if (request.message !== "reloadTab") {
+    return;
+  }
 
-    chrome.tabs.reload(sender.tab.id);
+  chrome.tabs.reload(sender.tab.id);
 });

@@ -8,18 +8,18 @@ export default async function modelRequest(
   verify,
   data = {},
   maxRetry = 3,
-  previousError = undefined,
+  previousError = undefined
 ) {
   // Recursion base case
   if (maxRetry === 0) {
-    throw previousError
+    throw previousError;
   }
 
   try {
     const response = await fetch(url, data);
 
     if (!response.ok || response.status === 204 || response.status === 429) {
-        throw { response };
+      throw { response };
     }
 
     const results = await response.json();

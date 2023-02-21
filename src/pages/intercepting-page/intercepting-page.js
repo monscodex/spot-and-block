@@ -4,25 +4,25 @@
 "use strict";
 
 chrome.runtime.sendMessage(
-    { message: "giveMeTheInterceptingPageData" },
-    (response) => {
-        if (response.message !== "handingYouTheInterceptingPageData") {
-            return;
-        }
-
-        displayMessage(response.displayMessage);
+  { message: "giveMeTheInterceptingPageData" },
+  (response) => {
+    if (response.message !== "handingYouTheInterceptingPageData") {
+      return;
     }
+
+    displayMessage(response.displayMessage);
+  }
 );
 
 function displayMessage(displayMessage) {
-    const tldr = document.getElementById("tldr");
-    const fullExplanation = document.getElementById("full-explanation");
+  const tldr = document.getElementById("tldr");
+  const fullExplanation = document.getElementById("full-explanation");
 
-    if (displayMessage === undefined) {
-        tldr.innerText = "You requested to close the site.";
-        fullExplanation.innerText = "";
-    } else {
-        tldr.innerText = `\t${displayMessage.tldr}`;
-        fullExplanation.innerText = `\t${displayMessage.fullExplanation}`;
-    }
+  if (displayMessage === undefined) {
+    tldr.innerText = "You requested to close the site.";
+    fullExplanation.innerText = "";
+  } else {
+    tldr.innerText = `\t${displayMessage.tldr}`;
+    fullExplanation.innerText = `\t${displayMessage.fullExplanation}`;
+  }
 }

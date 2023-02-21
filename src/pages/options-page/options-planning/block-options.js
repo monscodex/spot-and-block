@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import { blockingOptionDescription } from "../../../background-scripts/modules/block-elements-on-page/blocking-methods.js";
 
@@ -57,6 +57,9 @@ let blockOptionsConditionalPlanning = {
   ],
 };
 
-blockOptionsConditionalPlanning = makeConditionOptions(blockOptionsConditionalPlanning, blockConditions);
+blockOptionsConditionalPlanning = makeConditionOptions(
+  blockOptionsConditionalPlanning,
+  blockConditions
+);
 
 export default blockOptionsConditionalPlanning;

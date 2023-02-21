@@ -10,10 +10,10 @@ import blockOptionsConditionalPlanning from "./block-options.js";
 import spotOptionsConditionalPlanning from "./spot-options.js";
 
 const optionsPlanning = [
-    ...apiOptionsPlanning,
-    ...basicOptionsPlanning,
-    spotOptionsConditionalPlanning,
-    blockOptionsConditionalPlanning
+  ...apiOptionsPlanning,
+  ...basicOptionsPlanning,
+  spotOptionsConditionalPlanning,
+  blockOptionsConditionalPlanning,
 ];
 
 export default optionsPlanning;

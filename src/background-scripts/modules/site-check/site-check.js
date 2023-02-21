@@ -30,45 +30,45 @@ import {
 import { skipSiteCheck } from "./skipSiteCheck.js";
 import doesStringMatchFullyMatchInArrayWithWildcards from "./isStringInArrayWithWildcards.js";
 
-import { alertCouldNotEffectuateSiteCheck } from '../error-alerting.js'
+import { alertCouldNotEffectuateSiteCheck } from "../error-alerting.js";
 
 async function main() {
-    await waitUntilOptionsLoaded();
+  await waitUntilOptionsLoaded();
 
-    window.shodanAPI = new ShodanAPI();
-    window.virusTotalAPI = new VirusTotalAPI();
+  window.shodanAPI = new ShodanAPI();
+  window.virusTotalAPI = new VirusTotalAPI();
 
-    window.pageBlockers = {};
-    window.skipSiteCheckSites = [];
+  window.pageBlockers = {};
+  window.skipSiteCheckSites = [];
 
-    // In this object is stored all the information about the sites like their
-    // IP, their API results, their analysis, etc
-    new VariableThatWillUpdateStorage(window, "sites");
+  // In this object is stored all the information about the sites like their
+  // IP, their API results, their analysis, etc
+  new VariableThatWillUpdateStorage(window, "sites");
 
-    // This array contains the list of important sites that will be checked
-    // everytime the site is visited because it is an important site (e.g.
-    // authentication pages, etc).
-    new UpdatedVariable(window, "importantSites", "options.important-urls");
+  // This array contains the list of important sites that will be checked
+  // everytime the site is visited because it is an important site (e.g.
+  // authentication pages, etc).
+  new UpdatedVariable(window, "importantSites", "options.important-urls");
 
-    // This array contains the list of important sites that will be checked
-    // everytime the site is visited because it is an important site (e.g.
-    // authentication pages, etc).
-    window.deactivatedSitesInstance = new UpdatedVariable(
-      window,
-      "deactivateExtensionForSites",
-      "options.deactivate-extension-for-urls"
-    );
+  // This array contains the list of important sites that will be checked
+  // everytime the site is visited because it is an important site (e.g.
+  // authentication pages, etc).
+  window.deactivatedSitesInstance = new UpdatedVariable(
+    window,
+    "deactivateExtensionForSites",
+    "options.deactivate-extension-for-urls"
+  );
 
-    // If the extension has to analyse the information and the domain is not contained in the
-    // window.importantSites (the site isn't important), the site will be re-checked
-    // after a period of time after the last analysis defined by the variable below.
-    new UpdatedVariable(
-      window,
-      "unimportantSitesTimeout",
-      "options.unimportant-sites-timeout"
-    );
+  // If the extension has to analyse the information and the domain is not contained in the
+  // window.importantSites (the site isn't important), the site will be re-checked
+  // after a period of time after the last analysis defined by the variable below.
+  new UpdatedVariable(
+    window,
+    "unimportantSitesTimeout",
+    "options.unimportant-sites-timeout"
+  );
 
-    performAllTheSiteChecksNeeded();
+  performAllTheSiteChecksNeeded();
 }
 
 function performAllTheSiteChecksNeeded() {
@@ -119,10 +119,9 @@ function performAllTheSiteChecksNeeded() {
 
       // Could not parse site
       if (results === undefined) {
-        alertCouldNotEffectuateSiteCheck()
-        return
+        alertCouldNotEffectuateSiteCheck();
+        return;
       }
-
 
       // We want to analyse the data retrieved to determine the blocking actions that will be executed.
       // NOTE: we're re-analysing the data even if we already fetched the
@@ -143,13 +142,13 @@ async function parseWebsite(ip, domainName) {
 
   const allResults = await Promise.all([shodanResults, virusTotalResults]);
 
-  [shodanResults, virusTotalResults] = [ ...allResults ];
+  [shodanResults, virusTotalResults] = [...allResults];
 
-  let results = shodanResults
+  let results = shodanResults;
 
   // The Shodan results are mandatory for the extension to work
   if (shodanResults === undefined) {
-        return
+    return;
   }
 
   if (virusTotalResults !== undefined) {
@@ -161,7 +160,7 @@ async function parseWebsite(ip, domainName) {
 
 function saveResults(informationAboutWebsite, results) {
   if (results === undefined) {
-    return
+    return;
   }
 
   const { ip, domainName, currentDate, urlIsImportant } =

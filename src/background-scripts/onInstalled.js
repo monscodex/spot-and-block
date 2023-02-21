@@ -29,6 +29,8 @@ chrome.runtime.onInstalled.addListener(async () => {
 
   chrome.storage.local.set({ optionsLoaded: true });
 
+  chrome.runtime.openOptionsPage();
+
   reloadAllTabs();
 });
 

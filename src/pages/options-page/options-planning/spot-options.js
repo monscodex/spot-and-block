@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 import makeConditionOptions from "../components/makeConditionOptions.js";
 
@@ -189,6 +189,9 @@ let spotOptionsConditionalPlanning = {
   ],
 };
 
-spotOptionsConditionalPlanning = makeConditionOptions(spotOptionsConditionalPlanning, spotConditions);
+spotOptionsConditionalPlanning = makeConditionOptions(
+  spotOptionsConditionalPlanning,
+  spotConditions
+);
 
 export default spotOptionsConditionalPlanning;
