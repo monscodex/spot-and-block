@@ -238,4 +238,4 @@ This extension is a proof-of-work that answers the academical exercise that the 
 
 Last but not least, I want to acknowledge the CS50 team because thanks to them I have discovered my great passion. It has truly defined my future.
 
-Arturo Barazarte.
+Monscodex.
